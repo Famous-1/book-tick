@@ -1,0 +1,3 @@
+/** Placeholder imagery from original designs */
+export const AVATAR_URL =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuCZDXV0hyHBcYgJBe1OfPjlzUStJR-OAcXD2LmRxo3nanfnptqM6WfDVFUmrAZn_Awk2AlggpMv9BJLun1V8MK4pgcYQCIcmnPnxKOOorTnWJPDtRpjfTCLUjVR5G4oCT4cHoKk7jMvciqVRrjT1WaTouPHl6DpC30B-UaWp8I7yX6n65wgfQz-jOuD-dG_jgiNGN57LMFXwxtvAWnwMZiCB1LF5nn4ZImcVbP3Fh8Xa8r97tmUClhzfCUzEixh7Rp--g83zzVhoks";
