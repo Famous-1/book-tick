@@ -21,12 +21,6 @@ export function TimerPage() {
   const session = state.activeSession;
 
   useEffect(() => {
-    if (!session) {
-      navigate("/", { replace: true });
-    }
-  }, [session, navigate]);
-
-  useEffect(() => {
     if (!session || session.paused || session.status !== "running") {
       return undefined;
     }
@@ -46,7 +40,33 @@ export function TimerPage() {
   ]);
 
   if (!session) {
-    return null;
+    return (
+      <div className="relative flex flex-1 flex-col items-center justify-center px-6 py-12 sm:py-16">
+        <div className="pointer-events-none absolute left-4 top-8 -z-0 rotate-12 text-tertiary opacity-20 sm:left-6 sm:top-10">
+          <MaterialIcon name="menu_book" className="text-6xl" />
+        </div>
+        <div className="relative z-10 mx-auto flex w-full max-w-md flex-col items-center text-center">
+          <div className="mb-6 flex h-28 w-28 items-center justify-center rounded-full border-4 border-dashed border-primary/40 bg-surface-container-lowest shadow-inner sm:h-32 sm:w-32">
+            <MaterialIcon
+              name="schedule"
+              className="text-5xl text-primary/50 sm:text-6xl"
+            />
+          </div>
+          <h2 className="text-2xl font-black text-on-surface sm:text-3xl">
+            Not reading yet?
+          </h2>
+          <p className="mt-2 text-base text-on-surface-variant sm:text-lg">
+            Pick a book on Home to start the timer.
+          </p>
+          <div className="mt-8 w-full max-w-sm">
+            <PrimaryButton pillowy onClick={() => navigate("/")}>
+              <MaterialIcon name="auto_stories" className="text-3xl sm:text-4xl" />
+              <span className="text-xl font-black">Let&apos;s read</span>
+            </PrimaryButton>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   const { m, s } = formatCountdown(session.remainingSeconds);
